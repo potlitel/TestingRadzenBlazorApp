@@ -1,0 +1,104 @@
+@page "/players"
+
+<PageTitle>Players</PageTitle>
+<RadzenStack>
+    <RadzenRow AlignItems="AlignItems.Center">
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenText Text="Players" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                <RadzenSplitButton Icon="get_app" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+                    <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
+                    <RadzenSplitButtonItem Text="CSV" Value="csv" />
+                </RadzenSplitButton>
+                <RadzenButton Icon="add_circle_outline" Text="Add" Click="@AddButtonClick" Variant="Variant.Flat" />
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenRow>
+      <RadzenColumn SizeMD=12>
+        <RadzenDataGrid @ref="grid0" ColumnWidth="200px"  AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
+            Data="@players" TItem="TestingRadzenBlazorApp.Models.Baseball.Player" RowDoubleClick="@EditRow">
+            <Columns>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="lahmanID" Title="lahman I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="playerID" Title="player I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="managerID" Title="manager I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="hofID" Title="hof I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="birthYear" Title="birth Year">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="birthMonth" Title="birth Month">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="birthDay" Title="birth Day">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="birthCountry" Title="birth Country">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="birthState" Title="birth State">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="birthCity" Title="birth City">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="deathYear" Title="death Year">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="deathMonth" Title="death Month">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="deathDay" Title="death Day">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="deathCountry" Title="death Country">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="deathState" Title="death State">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="deathCity" Title="death City">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="nameFirst" Title="name First">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="nameLast" Title="name Last">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="nameNote" Title="name Note">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="nameGiven" Title="name Given">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="nameNick" Title="name Nick">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="weight" Title="weight">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="height" Title="height">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="bats" Title="bats">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="throws" Title="throws">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="debut" Title="debut">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="finalGame" Title="final Game">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="college" Title="college">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="lahman40ID" Title="lahman40 I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="lahman45ID" Title="lahman45 I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="retroID" Title="retro I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="holtzID" Title="holtz I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Property="bbrefID" Title="bbref I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Player" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+                    <Template Context="player">
+
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.Medium"
+                            Shade="Shade.Lighter" Variant="Variant.Flat"
+                            Click=@(args => GridDeleteButtonClick(args, player)) @onclick:stopPropagation="true" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+
+        </RadzenDataGrid>
+
+    </RadzenColumn>
+  </RadzenRow>
+</RadzenStack>

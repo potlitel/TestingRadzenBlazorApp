@@ -1,0 +1,50 @@
+@page "/fieldingofs"
+
+<PageTitle>Fieldingofs</PageTitle>
+<RadzenStack>
+    <RadzenRow AlignItems="AlignItems.Center">
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenText Text="Fieldingofs" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                <RadzenSplitButton Icon="get_app" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+                    <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
+                    <RadzenSplitButtonItem Text="CSV" Value="csv" />
+                </RadzenSplitButton>
+                <RadzenButton Icon="add_circle_outline" Text="Add" Click="@AddButtonClick" Variant="Variant.Flat" />
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenRow>
+      <RadzenColumn SizeMD=12>
+        <RadzenDataGrid @ref="grid0" ColumnWidth="200px"  AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
+            Data="@fieldingofs" TItem="TestingRadzenBlazorApp.Models.Baseball.Fieldingof" RowDoubleClick="@EditRow">
+            <Columns>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Fieldingof" Property="playerID" Title="player I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Fieldingof" Property="yearID" Title="year I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Fieldingof" Property="stint" Title="stint">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Fieldingof" Property="Glf" Title="Glf">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Fieldingof" Property="Gcf" Title="Gcf">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Fieldingof" Property="Grf" Title="Grf">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Fieldingof" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+                    <Template Context="fieldingof">
+
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.Medium"
+                            Shade="Shade.Lighter" Variant="Variant.Flat"
+                            Click=@(args => GridDeleteButtonClick(args, fieldingof)) @onclick:stopPropagation="true" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+
+        </RadzenDataGrid>
+
+    </RadzenColumn>
+  </RadzenRow>
+</RadzenStack>

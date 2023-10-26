@@ -1,0 +1,41 @@
+@page "/els-teamnames"
+
+<PageTitle>ElsTeamnames</PageTitle>
+<RadzenStack>
+    <RadzenRow AlignItems="AlignItems.Center">
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenText Text="ElsTeamnames" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                <RadzenSplitButton Icon="get_app" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+                    <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
+                    <RadzenSplitButtonItem Text="CSV" Value="csv" />
+                </RadzenSplitButton>
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenRow>
+      <RadzenColumn SizeMD=12>
+        <RadzenDataGrid @ref="grid0" ColumnWidth="200px"  AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
+            Data="@elsTeamnames" TItem="TestingRadzenBlazorApp.Models.Baseball.ElsTeamname">
+            <Columns>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.ElsTeamname" Property="id" Title="id">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.ElsTeamname" Property="lgid" Title="lgid">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.ElsTeamname" Property="teamid" Title="teamid">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.ElsTeamname" Property="franchid" Title="franchid">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.ElsTeamname" Property="name" Title="name">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.ElsTeamname" Property="park" Title="park">
+                </RadzenDataGridColumn>
+            </Columns>
+
+        </RadzenDataGrid>
+
+    </RadzenColumn>
+  </RadzenRow>
+</RadzenStack>

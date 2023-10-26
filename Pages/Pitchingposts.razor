@@ -1,0 +1,98 @@
+@page "/pitchingposts"
+
+<PageTitle>Pitchingposts</PageTitle>
+<RadzenStack>
+    <RadzenRow AlignItems="AlignItems.Center">
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenText Text="Pitchingposts" TextStyle="TextStyle.H3" TagName="TagName.H1" style="margin: 0" />
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End" Gap="0.5rem">
+                <RadzenSplitButton Icon="get_app" Text="Export" Click="@ExportClick" Variant="Variant.Flat" Shade="Shade.Lighter">
+                    <RadzenSplitButtonItem Text="Excel" Value="xlsx" />
+                    <RadzenSplitButtonItem Text="CSV" Value="csv" />
+                </RadzenSplitButton>
+                <RadzenButton Icon="add_circle_outline" Text="Add" Click="@AddButtonClick" Variant="Variant.Flat" />
+            </RadzenStack>
+        </RadzenColumn>
+    </RadzenRow>
+    <RadzenRow>
+      <RadzenColumn SizeMD=12>
+        <RadzenDataGrid @ref="grid0" ColumnWidth="200px"  AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
+            Data="@pitchingposts" TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" RowDoubleClick="@EditRow">
+            <Columns>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="playerID" Title="player I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="yearID" Title="year I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="round" Title="round">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="teamID" Title="team I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="lgID" Title="lg I D">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="W" Title="W">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="L" Title="L">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="G" Title="G">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="GS" Title="G S">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="CG" Title="C G">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="SHO" Title="S H O">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="SV" Title="S V">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="IPouts" Title="I Pouts">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="H" Title="H">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="ER" Title="E R">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="HR" Title="H R">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="BB" Title="B B">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="SO" Title="S O">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="BAOpp" Title="B A Opp">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="ERA" Title="E R A">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="IBB" Title="I B B">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="WP" Title="W P">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="HBP" Title="H B P">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="BK" Title="B K">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="BFP" Title="B F P">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="GF" Title="G F">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="R" Title="R">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="SH" Title="S H">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="SF" Title="S F">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Property="GIDP" Title="G I D P">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="TestingRadzenBlazorApp.Models.Baseball.Pitchingpost" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+                    <Template Context="pitchingpost">
+
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.Medium"
+                            Shade="Shade.Lighter" Variant="Variant.Flat"
+                            Click=@(args => GridDeleteButtonClick(args, pitchingpost)) @onclick:stopPropagation="true" />
+                    </Template>
+                </RadzenDataGridColumn>
+            </Columns>
+
+        </RadzenDataGrid>
+
+    </RadzenColumn>
+  </RadzenRow>
+</RadzenStack>
